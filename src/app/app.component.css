@@ -1,0 +1,59 @@
+.music-player {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+.album-art img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.track-info {
+    margin-top: 20px;
+}
+
+.progress {
+    height: 5px;
+    background-color: #555;
+    margin-top: 15px;
+}
+
+.progress-bar {
+    background-color: #f39c12;
+}
+
+.controls i {
+    font-size: 30px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.volume-control input {
+    width: 100px;
+    display: inline-block;
+}
+
+.track-list {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.track-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.track-list li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.track-list li.active {
+    color: #f39c12;
+}

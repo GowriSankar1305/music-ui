@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['/dashboard']">Music Player</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/upload']">Upload a song</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/playlists']">Playlists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container d-flex justify-content-center align-items-center">
+            <table class="table table-hover mt-5">
+                <thead>
+                    <tr>
+                       <th>Song id</th>
+                       <th>Title</th>
+                       <th>Performer info</th>
+                       <th>Composer</th>
+                       <th>Artist</th>
+                       <th>Actions</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let song of songs;let i = index">
+                    <td>{{i}}</td>
+                    <td>{{song.title}}</td>
+                    <td>{{song.performerInfo}}</td>
+                    <td>{{song.composer}}</td>
+                    <td>{{song.artist}}</td>
+                    <td><a class="btn btn-warning" [routerLink]="['/play']" [queryParams]="{songId: song.generatedFileName,songImgId: song._id}"><i class="bi bi-play-circle-fill"></i>&nbsp;&nbsp;Play</a></td>
+                  </tr>
+                  <tr *ngIf="songs.length === 0 || !songs">
+                    <td colspan="6" align="center">No songs added to this playlist yet</td>
+                  </tr>
+                </tbody>
+            </table>
+</div>

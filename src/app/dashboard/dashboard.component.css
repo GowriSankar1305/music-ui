@@ -1,0 +1,13 @@
+.custom-card {
+    width: 700px; /* Set a wide width */
+    height: 200px; /* Set a short height */
+  }
+
+  .card-img-left {
+    width: 40%; /* Image takes 40% of the card width */
+    object-fit: cover; /* Ensures the image fits properly */
+  }
+
+  .card-body-right {
+    width: 60%; /* Text part takes 60% of the card width */
+  }

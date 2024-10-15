@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center vh-100">
+        <div class="col-md-6">
+            <div class="card p-4">
+                <h2 class="text-center">Login</h2>
+                    <div class="mb-3">
+                        <label for="emailId" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="emailId" name="emailId" [(ngModel)]="user.emailId">
+                    </div>
+                    <div class="mb-3">
+                        <label for="userPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="userPassword" name="userPassword" [(ngModel)]="user.userPassword">
+                    </div>
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-primary" (click)="loginTheUser()" [innerHTML]="btnContent" [disabled]="isBtnDisabled"></button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a [routerLink]="['/register']">Don't have an account? Register</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

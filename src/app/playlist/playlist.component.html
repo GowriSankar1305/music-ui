@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['/dashboard']">Music Player</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/upload']">Upload a song</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/playlists']">Playlists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control form-control-sm" name="playlistName" id="playlistName" [(ngModel)]="playlistName" placeholder="Enter playlist name">
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-success" [innerHTML]="btnContent" [disabled]="isBtnDisabled" (click)="createPlaylist()"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <h3>Your Playlists</h3>
+        <ul class="list-group">
+            <li *ngFor="let list of playListArray" class="list-group-item"><a class="h4" [routerLink]="['/playlist/songs']" [queryParams]="{playlistId: list._id}">{{list.playlistName}}</a></li>
+            <li class="list-group-item" *ngIf="playListArray.length === 0">No playlists found</li>
+        </ul>
+    </div>
+</div>
